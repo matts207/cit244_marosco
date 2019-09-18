@@ -16,6 +16,14 @@ public class ObjectModels {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        SuperCar mattsCar = new SuperCar();
+        mattsCar.setMake("Honda");
+        mattsCar.setModel("Civic SI");
+        mattsCar.setModelYear(2009);
+        mattsCar.accelerate(60);
+        System.out.println(mattsCar.accelerate(60));
+        mattsCar.setVinNumber("dsagklljwalj3");
+        System.out.println(mattsCar.getVinNumber());
     }
     
 }

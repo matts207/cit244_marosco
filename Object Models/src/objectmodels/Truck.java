@@ -9,7 +9,7 @@ package objectmodels;
  *
  * @author matts207
  */
-public class Truck {
+public abstract class Truck extends Automobile{
     private int towingCapactity;
     private int bedCapacity;
 

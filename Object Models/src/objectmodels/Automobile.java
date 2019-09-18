@@ -9,7 +9,7 @@ package objectmodels;
  *
  * @author matts207
  */
-public class Automobile {
+public class Automobile implements Turnable{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -21,11 +21,36 @@ public class Automobile {
     private int numberOfGears;
     private int numberOfDoors;
     private int numberOfCupholders;
-    private int topSpeed;
     private double zeroToSixtyMPH;
     private String color;
+    private int weight;
+    private int speed;
+    private double centerOfGravity;
+    private String make;
+    private String model;
+    private int modelYear;
+    private boolean airbagsDeployed;
     
-
+    
+    /**
+     * 
+     * @param mph
+     * @return a string telling how fast the vehicle is going after accelerating.
+     */
+    public int accelerate(int mph) {
+        this.setSpeed(this.getSpeed() + mph);
+        return this.getSpeed();
+    }
+    
+    public int decelerate(int mph) {
+        this.setSpeed(this.getSpeed() - mph);
+        return this.getSpeed();
+    }    
+    
+    public int crash(int mph) {
+        
+    }
+    
     /**
      * @return the vinNumber
      */
@@ -181,20 +206,6 @@ public class Automobile {
     }
 
     /**
-     * @return the topSpeed
-     */
-    public int getTopSpeed() {
-        return topSpeed;
-    }
-
-    /**
-     * @param topSpeed the topSpeed to set
-     */
-    public void setTopSpeed(int topSpeed) {
-        this.topSpeed = topSpeed;
-    }
-
-    /**
      * @return the zeroToSixtyMPH
      */
     public double getZeroToSixtyMPH() {
@@ -220,6 +231,104 @@ public class Automobile {
      */
     public void setColor(String color) {
         this.color = color;
+    }
+
+    /**
+     * @return the weight
+     */
+    public int getWeight() {
+        return weight;
+    }
+
+    /**
+     * @param weight the weight to set
+     */
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    /**
+     * @return the speed
+     */
+    public int getSpeed() {
+        return speed;
+    }
+
+    /**
+     * @param speed the speed to set
+     */
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    /**
+     * @return the centerOfGravity
+     */
+    public double getCenterOfGravity() {
+        return centerOfGravity;
+    }
+
+    /**
+     * @param centerOfGravity the centerOfGravity to set
+     */
+    public void setCenterOfGravity(double centerOfGravity) {
+        this.centerOfGravity = centerOfGravity;
+    }
+
+    /**
+     * @return the make
+     */
+    public String getMake() {
+        return make;
+    }
+
+    /**
+     * @param make the make to set
+     */
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    /**
+     * @return the model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    /**
+     * @param model the model to set
+     */
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * @return the modelYear
+     */
+    public int getModelYear() {
+        return modelYear;
+    }
+
+    /**
+     * @param modelYear the modelYear to set
+     */
+    public void setModelYear(int modelYear) {
+        this.modelYear = modelYear;
+    }
+
+    /**
+     * @return the airbagsDeployed
+     */
+    public boolean isAirbagsDeployed() {
+        return airbagsDeployed;
+    }
+
+    /**
+     * @param airbagsDeployed the airbagsDeployed to set
+     */
+    public void setAirbagsDeployed(boolean airbagsDeployed) {
+        this.airbagsDeployed = airbagsDeployed;
     }
     
    
