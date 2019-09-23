@@ -9,6 +9,6 @@ package objectmodels;
  *
  * @author matts207
  */
-public interface Crash {
-    
+public enum DrivingMode {
+   NORMAL, ECO, SNOW, TRACK;
 }

@@ -9,7 +9,7 @@ package objectmodels;
  *
  * @author matts207
  */
-public class Automobile implements Accelerate, Turnable{
+public class Automobile implements Accelerate, Turnable, CrashTestable{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -30,6 +30,13 @@ public class Automobile implements Accelerate, Turnable{
     private String model;
     private int modelYear;
     private boolean airbagsDeployed;
+    private boolean driverAirbagPresent;
+    private DrivingMode drivemode;
+    private double frontBumperHeight;
+    private String frameMaterialIdentifier;
+    private double wheelbaseLength;
+    private double frontWeightLevel;
+    private double frontWeightRaised;
     
     
 
@@ -330,12 +337,160 @@ public class Automobile implements Accelerate, Turnable{
 
     @Override
     public void accelerate(int mph) {
-        this.speed += mph;
+        this.setSpeed(this.getSpeed() + mph);
     }
 
     @Override
     public void decelerate(int mph) {
-        this.speed -= mph;
+        this.setSpeed(this.getSpeed() - mph);
+    }
+
+    @Override
+    public void turn(int deg) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getVehicleYear() {
+        return this.getModelYear();
+    }
+
+    @Override
+    public DrivingMode getDrivingMode() {
+        return this.getDrivemode();
+    }
+
+    @Override
+    public double getVehicleWeight() {
+        return this.getWeight();
+    }
+
+    @Override
+    public double getFrontBumperHeight() {
+        return this.getFBumperHeight();
+    }
+
+    @Override
+    public String frameMaterialIdentifer() {
+        return this.getFrameMaterialIdentifier();
+    }
+
+    @Override
+    public boolean driverAirbagPresent() {
+        return this.isDriverAirbagPresent();
+    }
+
+    @Override
+    public double getLengthOfWheelBase() {
+        return this.getWheelbaseLength();
+    }
+
+    @Override
+    public double getFrontWeightLevelWeight() {
+        return this.getFrontWeightLevel();
+    }
+
+    @Override
+    public double getFrontWeightWhenRaised() {
+        return this.getFrontWeightRaised();
+    }
+
+    /**
+     * @return the driverAirbagPresent
+     */
+    public boolean isDriverAirbagPresent() {
+        return this.driverAirbagPresent;
+    }
+
+    /**
+     * @param driverAirbagPresent the driverAirbagPresent to set
+     */
+    public void setDriverAirbagPresent(boolean driverAirbagPresent) {
+        this.driverAirbagPresent = driverAirbagPresent;
+    }
+
+    /**
+     * @return the drivemode
+     */
+    public DrivingMode getDrivemode() {
+        return this.drivemode;
+    }
+
+    /**
+     * @param drivemode the drivemode to set
+     */
+    public void setDrivemode(DrivingMode drivemode) {
+        this.drivemode = drivemode;
+    }
+
+    /**
+     * @return the frontBumperHeight
+     */
+    public double getFBumperHeight() {
+        return this.frontBumperHeight;
+    }
+
+    /**
+     * @param frontBumperHeight the frontBumperHeight to set
+     */
+    public void setFBumperHeight(double frontBumperHeight) {
+        this.frontBumperHeight = frontBumperHeight;
+    }
+
+    /**
+     * @return the frameMaterialIdentifier
+     */
+    public String getFrameMaterialIdentifier() {
+        return this.frameMaterialIdentifier;
+    }
+
+    /**
+     * @param frameMaterialIdentifier the frameMaterialIdentifier to set
+     */
+    public void setFrameMaterialIdentifier(String frameMaterialIdentifier) {
+        this.frameMaterialIdentifier = frameMaterialIdentifier;
+    }
+
+    /**
+     * @return the wheelbaseLength
+     */
+    public double getWheelbaseLength() {
+        return this.wheelbaseLength;
+    }
+
+    /**
+     * @param wheelbaseLength the wheelbaseLength to set
+     */
+    public void setWheelbaseLength(double wheelbaseLength) {
+        this.wheelbaseLength = wheelbaseLength;
+    }
+
+    /**
+     * @return the frontWeightLevel
+     */
+    public double getFrontWeightLevel() {
+        return this.frontWeightLevel;
+    }
+
+    /**
+     * @param frontWeightLevel the frontWeightLevel to set
+     */
+    public void setFrontWeightLevel(double frontWeightLevel) {
+        this.frontWeightLevel = frontWeightLevel;
+    }
+
+    /**
+     * @return the frontWeightRaised
+     */
+    public double getFrontWeightRaised() {
+        return frontWeightRaised;
+    }
+
+    /**
+     * @param frontWeightRaised the frontWeightRaised to set
+     */
+    public void setFrontWeightRaised(double frontWeightRaised) {
+        this.frontWeightRaised = frontWeightRaised;
     }
     
    
