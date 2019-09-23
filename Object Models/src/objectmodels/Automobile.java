@@ -33,7 +33,7 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     private boolean driverAirbagPresent;
     private DrivingMode drivemode;
     private double frontBumperHeight;
-    private String frameMaterialIdentifier;
+    private FrameMaterialEnum frameMaterialIdentifier;
     private double wheelbaseLength;
     private double frontWeightLevel;
     private double frontWeightRaised;
@@ -371,7 +371,7 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     }
 
     @Override
-    public String frameMaterialIdentifer() {
+    public FrameMaterialEnum frameMaterialIdentifer() {
         return this.getFrameMaterialIdentifier();
     }
 
@@ -440,14 +440,14 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     /**
      * @return the frameMaterialIdentifier
      */
-    public String getFrameMaterialIdentifier() {
+    public FrameMaterialEnum getFrameMaterialIdentifier() {
         return this.frameMaterialIdentifier;
     }
 
     /**
      * @param frameMaterialIdentifier the frameMaterialIdentifier to set
      */
-    public void setFrameMaterialIdentifier(String frameMaterialIdentifier) {
+    public void setFrameMaterialIdentifier(FrameMaterialEnum frameMaterialIdentifier) {
         this.frameMaterialIdentifier = frameMaterialIdentifier;
     }
 
