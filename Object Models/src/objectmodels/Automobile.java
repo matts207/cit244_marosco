@@ -9,7 +9,7 @@ package objectmodels;
  *
  * @author matts207
  */
-public class Automobile implements Turnable{
+public class Automobile implements Accelerate, Turnable{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -32,25 +32,7 @@ public class Automobile implements Turnable{
     private boolean airbagsDeployed;
     
     
-    /**
-     * 
-     * @param mph
-     * @return a string telling how fast the vehicle is going after accelerating.
-     */
-    public int accelerate(int mph) {
-        this.setSpeed(this.getSpeed() + mph);
-        return this.getSpeed();
-    }
-    
-    public int decelerate(int mph) {
-        this.setSpeed(this.getSpeed() - mph);
-        return this.getSpeed();
-    }    
-    
-    public int crash(int mph) {
-        
-    }
-    
+
     /**
      * @return the vinNumber
      */
@@ -329,6 +311,31 @@ public class Automobile implements Turnable{
      */
     public void setAirbagsDeployed(boolean airbagsDeployed) {
         this.airbagsDeployed = airbagsDeployed;
+    }
+
+    @Override
+    public void fullbrake() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void shiftup() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void shiftdown() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void accelerate(int mph) {
+        this.speed += mph;
+    }
+
+    @Override
+    public void decelerate(int mph) {
+        this.speed -= mph;
     }
     
    

@@ -16,12 +16,6 @@ public class SuperCar extends Automobile{
     private boolean launchControl;
     private boolean supportsMultipleDrivingModes;
 
-    
-    @Override
-    public void turn(int degrees){
-        
-    }
-    
     /**
      * @return the hasSpoiler
      */
