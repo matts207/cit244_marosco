@@ -5,11 +5,14 @@
  */
 package objectmodels;
 
+import inheritancepractice.CrashTestable;
+import inheritancepractice.DrivingMode;
+
 /**
  *
  * @author matts207
  */
-public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
+public class Automobile implements Accelerate, Turnable, MattsCrashTestable, CrashTest{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -33,7 +36,8 @@ public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
     private boolean driverAirbagPresent;
     private DrivingMode drivemode;
     private double frontBumperHeight;
-    private FrameMaterial frameMaterialIdentifier;
+    private String frameMaterialIdentifier;
+    private FrameMaterial frameMaterial;
     private double wheelbaseLength;
     private double frontWeightLevel;
     private double frontWeightRaised;
@@ -366,12 +370,7 @@ public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
     }
 
     @Override
-    public double getFrontBumperHeight() {
-        return this.getFBumperHeight();
-    }
-
-    @Override
-    public FrameMaterial frameMaterialIdentifer() {
+    public String frameMaterialIdentifer() {
         return this.getFrameMaterialIdentifier();
     }
 
@@ -427,27 +426,27 @@ public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
      * @return the frontBumperHeight
      */
     public double getFBumperHeight() {
-        return this.frontBumperHeight;
+        return this.getFrontBumperHeight();
     }
 
     /**
      * @param frontBumperHeight the frontBumperHeight to set
      */
     public void setFBumperHeight(double frontBumperHeight) {
-        this.frontBumperHeight = frontBumperHeight;
+        this.setFrontBumperHeight(frontBumperHeight);
     }
 
     /**
      * @return the frameMaterialIdentifier
      */
-    public FrameMaterial getFrameMaterialIdentifier() {
+    public String getFrameMaterialIdentifier() {
         return this.frameMaterialIdentifier;
     }
 
     /**
      * @param frameMaterialIdentifier the frameMaterialIdentifier to set
      */
-    public void setFrameMaterialIdentifier(FrameMaterial frameMaterialIdentifier) {
+    public void setFrameMaterialIdentifier(String frameMaterialIdentifier) {
         this.frameMaterialIdentifier = frameMaterialIdentifier;
     }
 
@@ -492,6 +491,58 @@ public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
     public void setFrontWeightRaised(double frontWeightRaised) {
         this.frontWeightRaised = frontWeightRaised;
     }
-    
+
+    @Override
+    public FrameMaterial frameMaterial() {
+        return this.getFrameMaterial();
+    }
+
+    @Override
+    public double getFrontBumberHeight() {
+        return this.getFBumperHeight();
+    }
+
+    /**
+     * @return the frontBumperHeight
+     */
+    public double getFrontBumperHeight() {
+        return frontBumperHeight;
+    }
+
+    /**
+     * @param frontBumperHeight the frontBumperHeight to set
+     */
+    public void setFrontBumperHeight(double frontBumperHeight) {
+        this.frontBumperHeight = frontBumperHeight;
+    }
+
+    /**
+     * @return the frameMaterial
+     */
+    public FrameMaterial getFrameMaterial() {
+        return this.frameMaterial;
+    }
+
+    /**
+     * @param frameMaterial the frameMaterial to set
+     */
+    public void setFrameMaterial(FrameMaterial frameMaterial) {
+        this.frameMaterial = frameMaterial;
+    }
+
+    @Override
+    public double crash(CrashTestable thisbitchbetterbecrashtestableyo) {
+        if(this.getFrameMaterial()==FrameMaterial.ALLUMINUM){
+            return 1;
+        }
+        else if(this.getFrameMaterial()==FrameMaterial.STEEL){
+            return 3;
+        }
+        else{
+            return 5;
+        }
+    }
+
+
    
 }
