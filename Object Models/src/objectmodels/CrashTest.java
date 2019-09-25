@@ -9,6 +9,12 @@ package objectmodels;
  *
  * @author matts207
  */
-public class FrameMaterialEnum {
+public interface CrashTest {
+    /**
+     * 
+     * @param car = Automobile (so should be crashTestable...hopefully.
+     * @return a star rating between 0 and 5
+     */
+    public int crash(Automobile car);
     
 }

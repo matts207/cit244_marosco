@@ -9,7 +9,7 @@ package objectmodels;
  * 
  * @author edarsow
  */
-public interface CrashTestable {
+public interface MattsCrashTestable {
     /**
      * 
      * @return int of the vehicle model year
@@ -38,7 +38,7 @@ public interface CrashTestable {
      * 
      * @return a String with the frame material identifier 
      */
-    public String frameMaterialIdentifer();
+    public FrameMaterial frameMaterialIdentifer();
     
     /**
      * 

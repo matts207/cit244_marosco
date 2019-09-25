@@ -9,7 +9,7 @@ package objectmodels;
  *
  * @author matts207
  */
-public class Automobile implements Accelerate, Turnable, CrashTestable{
+public class Automobile implements Accelerate, Turnable, MattsCrashTestable{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -33,7 +33,7 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     private boolean driverAirbagPresent;
     private DrivingMode drivemode;
     private double frontBumperHeight;
-    private FrameMaterialEnum frameMaterialIdentifier;
+    private FrameMaterial frameMaterialIdentifier;
     private double wheelbaseLength;
     private double frontWeightLevel;
     private double frontWeightRaised;
@@ -322,7 +322,7 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
 
     @Override
     public void fullbrake() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.setSpeed(0);
     }
 
     @Override
@@ -371,7 +371,7 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     }
 
     @Override
-    public FrameMaterialEnum frameMaterialIdentifer() {
+    public FrameMaterial frameMaterialIdentifer() {
         return this.getFrameMaterialIdentifier();
     }
 
@@ -440,14 +440,14 @@ public class Automobile implements Accelerate, Turnable, CrashTestable{
     /**
      * @return the frameMaterialIdentifier
      */
-    public FrameMaterialEnum getFrameMaterialIdentifier() {
+    public FrameMaterial getFrameMaterialIdentifier() {
         return this.frameMaterialIdentifier;
     }
 
     /**
      * @param frameMaterialIdentifier the frameMaterialIdentifier to set
      */
-    public void setFrameMaterialIdentifier(FrameMaterialEnum frameMaterialIdentifier) {
+    public void setFrameMaterialIdentifier(FrameMaterial frameMaterialIdentifier) {
         this.frameMaterialIdentifier = frameMaterialIdentifier;
     }
 

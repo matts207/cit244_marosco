@@ -9,6 +9,6 @@ package objectmodels;
  *
  * @author matts207
  */
-public enum FirstEnum {
-    
+public enum FrameMaterial {
+    STEEL, ALLUMINUM, CARBONFIBER;
 }
