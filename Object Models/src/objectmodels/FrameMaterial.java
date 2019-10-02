@@ -10,5 +10,15 @@ package objectmodels;
  * @author matts207
  */
 public enum FrameMaterial {
-    STEEL, ALLUMINUM, CARBONFIBER;
+    STEEL(1),
+    ALLUMINUM(.5),
+    CARBONFIBER(0);
+    private final double value;
+    private FrameMaterial(double des){
+        this.value = des;
+    }
+    
+    public double getValue(){
+        return this.value;
+    }
 }

@@ -12,7 +12,7 @@ import inheritancepractice.DrivingMode;
  *
  * @author matts207
  */
-public class Automobile implements Accelerate, Turnable, MattsCrashTestable, CrashTest{
+public class Automobile implements Accelerate, Turnable, MattsCrashTestable, CrashTestable{
     private String vinNumber;
     private String engineType;
     private int numberOfWheels;
@@ -530,18 +530,7 @@ public class Automobile implements Accelerate, Turnable, MattsCrashTestable, Cra
         this.frameMaterial = frameMaterial;
     }
 
-    @Override
-    public double crash(CrashTestable thisbitchbetterbecrashtestableyo) {
-        if(this.getFrameMaterial()==FrameMaterial.ALLUMINUM){
-            return 1;
-        }
-        else if(this.getFrameMaterial()==FrameMaterial.STEEL){
-            return 3;
-        }
-        else{
-            return 5;
-        }
-    }
+
 
 
    
