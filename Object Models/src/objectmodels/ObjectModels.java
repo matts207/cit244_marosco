@@ -31,7 +31,7 @@ public class ObjectModels{
         noSurvivors.setDriverAirbagPresent(true);
         double c  = crash(noSurvivors);
         System.out.println(String.format("Score: %.1f/5", c));
-//        System.out.println(c);
+        System.out.println(c);
     }
 
     public static double crash(MattsCrashTestable car) {
