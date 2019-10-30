@@ -47,7 +47,7 @@ public class md5 {
 //            Logger.getLogger(md5.class.getName()).log(Level.SEVERE, null, ex);
 //          }
         EncryptAndCreateFile f = new EncryptAndCreateFile();
-        f.encryptmd5("HELLO");
+        f.encryptmd5("HELLO".getBytes());
         f.setFileName("ciphertext2.txt");
         f.writeToFile();
             

@@ -8,7 +8,10 @@
  *
  * @author matts207
  */
-public interface Encrypt {
-    public void encryptmd5(byte[] plaintext);
+public class Model {
+    
+    private String hashedText;
+    private String fileName;
+    
     
 }

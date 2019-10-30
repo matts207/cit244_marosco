@@ -28,10 +28,10 @@ public class EncryptAndCreateFile implements Encrypt {
      * @param plaintext
      */
     @Override
-    public void encryptmd5(String plaintext){
+    public void encryptmd5(byte[] plaintext){
         try {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] messageba = md5.digest(plaintext.getBytes());
+            byte[] messageba = md5.digest(plaintext);
             BigInteger bi = new BigInteger(1, messageba);
             hashedtext = bi.toString(16);
             while(hashedtext.length() < 32){
