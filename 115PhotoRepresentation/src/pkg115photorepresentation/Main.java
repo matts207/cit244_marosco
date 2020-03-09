@@ -16,6 +16,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+//        String n = "Hello";
+//        String[] m = n.split("");
+//        for(int u = 0; u < m.length;u++){
+//            System.out.println(m[u]);
+//        }
         View m = new View();
         
     }

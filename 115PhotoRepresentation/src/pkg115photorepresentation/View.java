@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
@@ -144,42 +145,61 @@ public class View {
         menuframe.setLocationRelativeTo(null);
         menuframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menuframe.setVisible(true);
-        
     }
     
-    
-    
     public void inputScreenBin(int rows, int cols){
-        JFrame frame = new JFrame("IO");
-        frame.setLayout(new GridLayout(rows, cols));
-        ArrayList<ArrayList> collist = new ArrayList();
-        
-        for(int i = 0;i < cols; i++){
-            ArrayList<Integer> rowlist = new ArrayList();
-            for(int s = 0;s < rows; s++){
-                JPanel bp = new JPanel();
-                bp.setBackground(color);
-                JButton jcb = new JButton();
-                jcb.addActionListener((ActionEvent ae) -> {
-                    if(bp.getBackground() == color){
-                        jcb.setBackground(Color.DARK_GRAY);
-                        bp.setBackground(Color.DARK_GRAY);
-                    }
-                    else{                    
-                        jcb.setBackground(Color.WHITE);
-                        bp.setBackground(Color.WHITE);
-                    }
-                });
-                bp.add(jcb);
-                frame.add(bp);
-            }
+        String inputString = JOptionPane.showInputDialog("Enter your bits. Ex: 10010100100");
+        int ti = rows * cols;
+        String[] splitInput = inputString.split("");
+        if(splitInput.length < ti){
+            inputString = JOptionPane.showInputDialog("Too short.  You need " + ti + " bits!");
         }
         
-//        frame.setSize(rows , cols);
+
+        int count = 0;
+        int[] intarray = new int[splitInput.length];
+        for(int i = 0;i < splitInput.length;i++){
+            String st = splitInput[i];
+            intarray[i] = Integer.parseInt(st);
+        }
+        JFrame frame = new JFrame("IO");
+        frame.setLayout(new GridLayout(rows, cols));
+        
+        for(int i = 0;i < cols; i++){
+            for(int s = 0;s < rows; s++){
+                JPanel bp = new JPanel();
+//                bp.setBackground(color);
+//                JButton jcb = new JButton();
+//                jcb.addActionListener((ActionEvent ae) -> {
+//                    if(bp.getBackground() == color){
+//                        jcb.setBackground(Color.DARK_GRAY);
+//                        bp.setBackground(Color.DARK_GRAY);
+//                    }
+//                    else{                    
+//                        jcb.setBackground(Color.WHITE);
+//                        bp.setBackground(Color.WHITE);
+//                    }
+//                });
+
+                int num = intarray[count];
+                count++;
+                
+                switch(num){
+                    case 0:
+                        color = Color.WHITE;
+                        break;
+                    case 1:
+                        color = Color.GRAY;
+                        break;
+                }
+                
+                bp.setBackground(color);
+                frame.add(bp);
+                //She might be racist.
+            }
+        }
         frame.setSize(cols*50, rows*50);
         frame.setVisible(true);
-        
-        
     }
     
     class CustomActionListenerForCheckbox implements ActionListener{
@@ -205,7 +225,7 @@ public class View {
                 inputScreenBin(getRows(), getCols());
             }
             else if(getRgbrb().isSelected()){
-                
+                JOptionPane.showMessageDialog(null, "RGB image representations are not currently supported.  Try binary.");
             }
         }
         
@@ -217,10 +237,7 @@ public class View {
         }else{
             this.setButtonVal(0);
         }
-        
     }
-
-    
     
     /**
      * @return the inputframe
